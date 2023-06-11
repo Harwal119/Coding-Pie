@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Pie>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    //var realAge = Convert.ToInt32(ViewData["myAge"].ToString()) + 1;
+
+}
+<div class="text-center">
+    
+    <h1 class="display-4">Welcome</h1>
+    <h2>This is a new section</h2>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @foreach (var pie in Model )
+    {
+        <h4>@pie.Name</h4>
+        <h4>@pie.Description</h4>
+        <h4>@pie.Price</h4>
+    }
+</div>

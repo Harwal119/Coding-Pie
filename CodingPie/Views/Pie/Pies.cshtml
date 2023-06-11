@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Pie>
+
+
+
+
+
+@{
+    ViewData["Title"] = "Pie Page";
+}
+@if (TempData["successfull"] != null)
+{
+    <text>
+        <script>
+            $(document).ready(function () {
+                alert('@TempData["successfull"]');
+            });
+        </script>
+    </text>
+    
+}
+<h1>Welcome @ViewBag.name</h1>
+<div> <p>List of Pies</p></div>
+<div>
+    <table class="table table-active table-bordered table-responsive table-striped" style="color: blue;">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Detail
+                </th>
+                <th>
+                    Update
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var pie in Model){
+                <tr>
+                    <td>
+                        @pie.Id
+                    </td>
+                    <td>
+                        @pie.Name
+                    </td>
+                    <td>
+                        @pie.Price
+                    </td>
+                    <td>
+                        <a asp-controller="Pie" asp-action="Pie" asp-route-id="@pie.Id"><i><b>View</b></i></a>
+                    </td>
+                    <td>
+                        <a asp-controller="Pie" asp-action="Update" asp-route-id="@pie.Id"><i><b>Edit</b></i></a>
+                    </td>
+                    <td>
+                        <a asp-controller="Pie" asp-action="Delete" asp-route-id="@pie.Id"><i><b>Remove</b></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-controller="Pie" asp-action="Add"><i>Add</i></a>
+</div>
+

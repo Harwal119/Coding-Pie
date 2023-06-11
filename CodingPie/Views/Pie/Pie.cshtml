@@ -1,0 +1,13 @@
+﻿@model Pie
+
+@{
+    var photo = "~/images/" + (Model.PiePicturePath == null ? "anonymousPie.jpeg" : Model.PiePicturePath);
+}
+
+<div>
+    <h4>@Model.Id</h4>
+    <h4>@Model.Name</h4>
+    <h4>@Model.Description</h4>
+    <h4>@Model.Price</h4>
+    <img src="@photo" asp-append-version="true" class="card-img" height="250px" width="300px" />
+</div>

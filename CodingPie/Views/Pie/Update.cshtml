@@ -1,0 +1,28 @@
+﻿@model Pie
+
+<p><i><b>Use this form to add new Pie</b></i></p>
+<div>
+    <form asp-action="Update">
+        <div class="form-control">
+            <div>
+                <label><i><b>Id</b></i></label>
+                <input type="number" name="Id" value="@Model.Id" readonly/>
+            </div>
+            <div>
+                <label><i><b>Name</b></i></label>
+                <input type="text" name="Name" value="@Model.Name" />
+            </div>
+            <div>
+                <label><i><b>Price</b></i></label>
+                <input type="number" name="Price" value="@Model.Price" />
+            </div>
+            <div>
+                <label><i><b>Description</b></i></label>
+                <input type="text" name="Description" value="@Model.Description" />
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </div>
+        </div>
+    </form>
+</div>

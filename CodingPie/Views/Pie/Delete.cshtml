@@ -1,0 +1,13 @@
+﻿@model Pie
+
+<div><i><b>Are you sure you want to delete this pie?</b></i></div>
+<div>
+    <h4>@Model.Id</h4>
+    <h4>@Model.Name</h4>
+    <h4>@Model.Description</h4>
+    <h4>@Model.Price</h4>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" value="@Model.Id"/>
+    <input class="btn btn-danger" type="submit" value="Delete"/>
+</form>
